@@ -10,8 +10,16 @@ using namespace std;
 
 void remove(int array[], int size);
 void printArray(int array[], int size);
+void push(int array[], int value, int &size);
 
-void remove(int array[], int pos, int &size){
+void push(int array[], int value, int &size)
+{
+    array[size] = value;
+    size++;
+}
+
+void remove(int array[], int pos, int &size)
+{
     for (int i = pos; i < size; i++)
     {
         array[i] = array[i + 1];
@@ -19,7 +27,8 @@ void remove(int array[], int pos, int &size){
     size--;
 }
 
-void printArray(int array[], int size){
+void printArray(int array[], int size)
+{
     for (int i = 0; i < size; i++)
     {
         if (i == 0)
@@ -29,6 +38,5 @@ void printArray(int array[], int size){
             println("}");
     }
 }
-
 
 #endif
