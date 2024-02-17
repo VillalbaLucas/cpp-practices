@@ -36,8 +36,8 @@ void menu(int array[], int &size){
             push(array, value, size);
             printArray(array, size);
         break;
-    case: 
-         
+    case 2:
+        break;
     default:
         println("exit...");
         break;
@@ -45,6 +45,9 @@ void menu(int array[], int &size){
 }
 
 void printOptions(){
-    println("\nOptions: ");
-    println("1. push");
+    printlnAll(
+        "\nOptions: ",
+        "1. push",
+        "2. printAll"
+        );
 }
