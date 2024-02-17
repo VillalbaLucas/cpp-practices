@@ -1,0 +1,21 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Build C++ project in vscode",
+            "type": "shell",
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "args": [
+                "-o",
+                "main.cpp",
+                "source/vectores.cpp",
+                "-Iheaders/"   
+            ],
+            "command": ".\\build.bat"
+        }
+        
+    ]
+}
