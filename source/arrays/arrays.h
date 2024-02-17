@@ -5,20 +5,33 @@
 #include <iostream>
 
 #include "../utils/print.h"
+#include "const.h"
 
 using namespace std;
 
-void remove(int array[], int size);
+void remove(int array[], int pos, int& size);
 void printArray(int array[], int size);
-void push(int array[], int value, int &size);
+void pushStart(int array[], int value, int &size);
+void pop(int *array, int& size);
 
-void push(int array[], int value, int &size)
-{
-    array[size] = value;
-    size++;
+void pop(int *array, int& size){
+    if (size != 0)
+        size--;
+    else
+        println("minimal size...");
 }
 
-void remove(int array[], int pos, int &size)
+void pushStart(int array[], int value, int &size){
+    if (size < TAM){
+        size++;
+        for (int i = size; i > 0; i--){
+            array[i] = array[i-1];
+        }
+        array[0] = value;
+    }
+}
+
+void remove(int array[], int pos, int& size)
 {
     for (int i = pos; i < size; i++)
     {
