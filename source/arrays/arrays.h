@@ -16,6 +16,16 @@ void pushStart(int array[], int value, int &size);
 void pushEnd(int array[], int value, int &size);
 void pop(int &size);
 void bubbleSort(int array[], int size);
+void recursiveInsertionSort(int *array, int size);
+
+void recursiveInsertionSort(int *array, int size){
+    for (int i = 1; i < size; i++){
+        if (array[i] < array[i - 1]){
+            swap(array[i], array[i - 1]);
+            recursiveInsertionSort(array, i);
+        }
+    }
+}
 
 void bubbleSort(int array[], int size){
     while (size >= 0){
