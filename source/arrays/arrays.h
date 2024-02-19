@@ -18,8 +18,8 @@ void pop(int &size);
 void bubbleSort(int array[], int size);
 
 void bubbleSort(int array[], int size){
-    while (size != 0){
-        for (int i = 0; i < size; i++){
+    while (size >= 0){
+        for (int i = 0; i < size-1; i++){
             if (array[i] > array[i + 1])
                 swap(array[i], array[i + 1]);
         }
