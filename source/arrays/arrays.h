@@ -12,9 +12,14 @@ using namespace std;
 void remove(int array[], int pos, int& size);
 void printArray(int array[], int size);
 void pushStart(int array[], int value, int &size);
-void pop(int *array, int& size);
+void pushEnd(int array[], int value, int &size);
+void pop(int& size);
 
-void pop(int *array, int& size){
+void pushEnd(int array[], int value, int &size){
+    array[size++] =  value;
+}
+
+void pop(int& size){
     if (size != 0)
         size--;
     else
