@@ -53,6 +53,7 @@ void menu(int array[], int &size)
         printArray(array, size);
         break;
     case 4:
+        printArray(array, size);
         bubbleSort(array, size);
         printArray(array, size);
         break;
@@ -66,9 +67,9 @@ void printOptions()
 {
     printlnAll(
         "\nOptions: ",
-        "1. pushStart",
+        "1. Push Start",
         "2. Pop array",
-        "3. PushEnd"
+        "3. Push End",
         "4. Bubble Sort"
         );
 }
