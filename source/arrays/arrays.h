@@ -5,21 +5,33 @@
 #include <iostream>
 
 #include "../utils/print.h"
+#include "../utils/aritmethic.h"
 #include "const.h"
 
 using namespace std;
 
-void remove(int array[], int pos, int& size);
+void remove(int array[], int pos, int &size);
 void printArray(int array[], int size);
 void pushStart(int array[], int value, int &size);
 void pushEnd(int array[], int value, int &size);
-void pop(int& size);
+void pop(int &size);
+void bubbleSort(int array[], int size);
 
-void pushEnd(int array[], int value, int &size){
-    array[size++] =  value;
+void bubbleSort(int array[], int size){
+    while (size != 0){
+        for (int i = 0; i < size; i++){
+            if (array[i] > array[i + 1])
+                swap(array[i], array[i + 1]);
+        }
+        size--;
+    }
 }
 
-void pop(int& size){
+void pushEnd(int array[], int value, int &size){
+    array[size++] = value;
+}
+
+void pop(int &size){
     if (size != 0)
         size--;
     else
@@ -36,8 +48,7 @@ void pushStart(int array[], int value, int &size){
     }
 }
 
-void remove(int array[], int pos, int& size)
-{
+void remove(int array[], int pos, int &size){
     for (int i = pos; i < size; i++)
     {
         array[i] = array[i + 1];
