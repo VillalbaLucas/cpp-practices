@@ -39,7 +39,13 @@ void menu(int array[], int &size)
         break;
     case 2:
         println("Popeando array... ");
-        pop(array, size);
+        pop(size);
+        printArray(array, size);
+        break;
+    case 3:
+        print("Agregar elemento al final, valor: ");
+        cin >> value; 
+        pushEnd(array, value, size);
         printArray(array, size);
         break;
     default:
