@@ -3,6 +3,7 @@
 
 #include "arrays.h"
 #include "../utils/print.h"
+#include "../utils/aritmethic.h"
 #include "const.h"
 
 using namespace std;
@@ -13,12 +14,15 @@ void menu(int array[], int &size);
 int main()
 {
     int size = 12;
+    int size_messy = 10;
     int array[TAM]{1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12};
+    int array_messy[TAM]{ 13, 41, 5, 232, 7, 84, 91, 10, 11, 12};
 
-    printArray(array, size);
+    //printArray(array, size);
+    printArray(array_messy, size_messy);
     while (true)
     {
-        menu(array, size);
+        menu(array_messy, size_messy);
     }
 }
 
@@ -44,8 +48,12 @@ void menu(int array[], int &size)
         break;
     case 3:
         print("Agregar elemento al final, valor: ");
-        cin >> value; 
+        cin >> value;
         pushEnd(array, value, size);
+        printArray(array, size);
+        break;
+    case 4:
+        bubbleSort(array, size);
         printArray(array, size);
         break;
     default:
@@ -61,5 +69,6 @@ void printOptions()
         "1. pushStart",
         "2. Pop array",
         "3. PushEnd"
+        "4. Bubble Sort"
         );
 }
