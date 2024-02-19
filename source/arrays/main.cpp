@@ -59,5 +59,7 @@ void printOptions()
     printlnAll(
         "\nOptions: ",
         "1. pushStart",
-        "2. Pop array");
+        "2. Pop array",
+        "3. PushEnd"
+        );
 }
