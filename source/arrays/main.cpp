@@ -14,9 +14,9 @@ void menu(int array[], int &size);
 int main()
 {
     int size = 12;
-    int size_messy = 10;
+    int size_messy = 11;
     int array[TAM]{1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12};
-    int array_messy[TAM]{13, 41, 5, 232, 7, 84, 91, 10, 1, 0};
+    int array_messy[TAM]{0, 41, 5, 4, 232, 7, 84, 91, 10, 1, 0};
 
     // printArray(array, size);
     printArray(array_messy, size_messy);
@@ -62,6 +62,11 @@ void menu(int array[], int &size)
         recursiveInsertionSort(array, size);
         printArray(array, size);
         break;
+    case 6:
+        printArray(array, size);
+        selectionSort(array, size);
+        printArray(array, size);
+        break;
     default:
         println("exit...");
         break;
@@ -76,6 +81,6 @@ void printOptions()
         "2. Pop array",
         "3. Push End",
         "4. Bubble Sort",
-        "5. Recursive Insertion Sort"
-        );
+        "5. Recursive Insertion Sort",
+        "6. Selection Sort");
 }
