@@ -18,8 +18,6 @@ int main()
     int array[TAM]{1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12};
     int array_messy[TAM]{0, 41, 5, 4, 232, 7, 84, 91, 10, 1, 0};
 
-    // printArray(array, size);
-    printArray(array_messy, size_messy);
     while (true)
     {
         menu(array_messy, size_messy);
@@ -38,10 +36,12 @@ void menu(int array[], int &size)
         int value;
         print("Agregar elemento, valor: ");
         cin >> value;
+        printArray(array, size);
         pushStart(array, value, size);
         printArray(array, size);
         break;
     case 2:
+        printArray(array, size);
         println("Popeando array... ");
         pop(size);
         printArray(array, size);
@@ -49,6 +49,7 @@ void menu(int array[], int &size)
     case 3:
         print("Agregar elemento al final, valor: ");
         cin >> value;
+        printArray(array, size);
         pushEnd(array, value, size);
         printArray(array, size);
         break;
