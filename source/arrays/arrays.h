@@ -17,6 +17,21 @@ void pushEnd(int array[], int value, int &size);
 void pop(int &size);
 void bubbleSort(int array[], int size);
 void recursiveInsertionSort(int *array, int size);
+void selectionSort(int *array, int size);
+
+void selectionSort(int *array, int size){
+    for(int i=0; i<size; i++){
+        int minor = array[i], pos;
+        for (int j = i; j < size; j++){
+            if(minor > array[j]){
+                pos = j;
+                minor = array[j];
+            }
+        }
+        if(minor < array[i])
+            swap(array[i], array[pos]);
+    }
+}
 
 void recursiveInsertionSort(int *array, int size){
     for (int i = 1; i < size; i++){
@@ -27,9 +42,12 @@ void recursiveInsertionSort(int *array, int size){
     }
 }
 
-void bubbleSort(int array[], int size){
-    while (size >= 0){
-        for (int i = 0; i < size-1; i++){
+void bubbleSort(int array[], int size)
+{
+    while (size >= 0)
+    {
+        for (int i = 0; i < size - 1; i++)
+        {
             if (array[i] > array[i + 1])
                 swap(array[i], array[i + 1]);
         }
@@ -37,28 +55,34 @@ void bubbleSort(int array[], int size){
     }
 }
 
-void pushEnd(int array[], int value, int &size){
+void pushEnd(int array[], int value, int &size)
+{
     array[size++] = value;
 }
 
-void pop(int &size){
+void pop(int &size)
+{
     if (size != 0)
         size--;
     else
         println("minimal size...");
 }
 
-void pushStart(int array[], int value, int &size){
-    if (size < TAM){
+void pushStart(int array[], int value, int &size)
+{
+    if (size < TAM)
+    {
         size++;
-        for (int i = size; i > 0; i--){
-            array[i] = array[i-1];
+        for (int i = size; i > 0; i--)
+        {
+            array[i] = array[i - 1];
         }
         array[0] = value;
     }
 }
 
-void remove(int array[], int pos, int &size){
+void remove(int array[], int pos, int &size)
+{
     for (int i = pos; i < size; i++)
     {
         array[i] = array[i + 1];
