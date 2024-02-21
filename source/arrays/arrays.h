@@ -18,6 +18,37 @@ void pop(int &size);
 void bubbleSort(int array[], int size);
 void recursiveInsertionSort(int *array, int size);
 void selectionSort(int *array, int size);
+int binarySearch(int *array, int value, int size);
+
+int binarySearch(int *array, int value, int size){
+    bool flag = true;
+    int index=-1;
+    int middle = size/2, tope = size, base = 0;
+
+    while (flag){
+        if(middle > tope || middle < 0 || middle == base){
+            flag = false;
+        }
+        
+        if(value < array[middle]){
+            if(value == array[middle-1]){
+                flag = false;
+                index = middle-1;
+            }
+            size = middle;
+            middle=(size+base)/2;
+        }else{
+            if(value == array[middle]){
+                flag = false;
+                index = middle;
+            }
+            base = middle;
+            middle = (size+middle)/2;
+        }
+    }
+    return index;
+}
+
 
 void selectionSort(int *array, int size){
     for(int i=0; i<size; i++){
