@@ -19,8 +19,38 @@ void bubbleSort(int array[], int size);
 void recursiveInsertionSort(int *array, int size);
 void selectionSort(int *array, int size);
 int binarySearch(int *array, int value, int size);
+void insertOrdered(int *array, int value, int &size);
+void desplazar(int *array, int pos, int &size);
 
-int binarySearch(int *array, int value, int size){
+void desplazar(int *array, int pos, int &size){
+    for (int i = size; i > pos; i--){
+        array[i] = array[i - 1];
+    }
+    array[pos] = -1;
+    size++;
+}
+
+void insertOrdered(int *array, int value, int &size){
+    bool flag = true; 
+    int i=0;
+
+    while(i<size && flag){
+        if(value >= array[i])
+            i++;
+        else {
+            desplazar(array, i, size);
+            array[i] = value;
+            flag = false;
+        }
+    }
+    if(i==size){
+        size++;
+        array[i]=value;
+    }
+}
+
+int binarySearch(int *array, int value, int size)
+{
     bool flag = true;
     int index=-1;
     int middle = size/2, tope = size, base = 0;
