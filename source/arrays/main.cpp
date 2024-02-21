@@ -68,6 +68,12 @@ void menu(int array[], int &size)
         selectionSort(array, size);
         printArray(array, size);
         break;
+    case 7:
+        print("Valor a buscar en el array?: ");
+        cin >>  value;
+        printArray(array, size);
+        printAll("index: ", binarySearch(array, value, size));
+        break;
     default:
         println("exit...");
         break;
@@ -83,5 +89,7 @@ void printOptions()
         "3. Push End",
         "4. Bubble Sort",
         "5. Recursive Insertion Sort",
-        "6. Selection Sort");
+        "6. Selection Sort",
+        "7. Binary Search"
+        );
 }
