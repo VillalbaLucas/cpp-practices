@@ -104,6 +104,8 @@ void printOptions()
         "4. Bubble Sort",
         "5. Recursive Insertion Sort",
         "6. Selection Sort",
-        "7. Binary Search"
+        "7. Binary Search",
+        "8. Desplazar",
+        "9. Ordered Insert"
         );
 }
