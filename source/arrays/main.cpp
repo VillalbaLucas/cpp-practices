@@ -74,6 +74,20 @@ void menu(int array[], int &size)
         printArray(array, size);
         printAll("index: ", binarySearch(array, value, size));
         break;
+    case 8:
+        print("Desplazar desde el index: ");
+        cin >>  value;
+        printArray(array, size);
+        desplazar(array, value, size);
+        printArray(array, size);
+        break;
+    case 9:
+        print("Valor a insertar ordenadamente?: ");
+        cin >>  value;
+        printArray(array, size);
+        insertOrdered(array, value, size);
+        printArray(array, size);
+        break;
     default:
         println("exit...");
         break;
