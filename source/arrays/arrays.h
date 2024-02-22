@@ -49,8 +49,7 @@ void insertOrdered(int *array, int value, int &size){
     }
 }
 
-int binarySearch(int *array, int value, int size)
-{
+int binarySearch(int *array, int value, int size){
     bool flag = true;
     int index=-1;
     int middle = size/2, tope = size, base = 0;
@@ -151,16 +150,11 @@ void remove(int array[], int pos, int &size)
     size--;
 }
 
-void printArray(int array[], int size)
-{
+void printArray(int array[], int size){
+    print("{");
     for (int i = 0; i < size; i++)
-    {
-        if (i == 0)
-            print("{ ");
         cout << array[i] << ", ";
-        if (i == size - 1)
-            println("}");
-    }
+    println("}");
 }
 
 #endif
