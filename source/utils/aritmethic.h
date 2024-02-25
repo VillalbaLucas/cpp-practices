@@ -5,6 +5,17 @@
 
 void swap(int& a, int& b);
 int cantDigit(int num);
+int sumDigit(int num);
+
+int sumDigit(int num){
+     int sumDigits{0};
+     while (num > 0){
+          sumDigits+=num%10;
+          num/=10;
+     }
+     return sumDigits;
+}
+
 
 int cantDigit(int num){
      int digits{0};
