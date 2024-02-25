@@ -6,6 +6,17 @@
 void swap(int& a, int& b);
 int cantDigit(int num);
 int sumDigit(int num);
+int pow(int base, int pow);
+
+int pow(int base, int pow){
+     int num_pow{base};
+     if(pow == 0)
+          return 1;
+     for(size_t i = 1; i < pow; i++){
+          num_pow *= base;
+     }
+     return num_pow;
+}
 
 int sumDigit(int num){
      int sumDigits{0};
